@@ -1,0 +1,51 @@
+// data/projects.js
+export const projects = [
+    {
+      id: "etc-ecommerce",
+      name: "ETC E-commerce",
+      desc: "Ethiopian crafts store",
+      link: "https://github.com/bin-ym/ETC---Ethiopian-Traditional-Craft-E-commerce",
+      image: "/images/projects/etc-ecommerce.jpg",
+      tech: ["React.js", "Tailwind", "MongoDB"],
+    },
+    {
+      id: "hrm",
+      name: "HRM",
+      desc: "HR management system",
+      link: "https://github.com/bin-ym/HRM",
+      image: "/images/projects/hrm.jpg",
+      tech: ["PHP", "XAMPP"],
+    },
+    {
+      id: "go2cod-gallery",
+      name: "Responsive Image Gallery",
+      desc: "A responsive image gallery with lightbox functionality.",
+      link: "https://github.com/bin-ym/GO2COD_WD_04",
+      image: "/images/projects/go2cod-gallery.jpg",
+      tech: ["React", "Tailwind CSS", "JavaScript"],
+    },
+    {
+      id: "go2cod-calculator",
+      name: "YMCalculator",
+      desc: "A feature-rich calculator with history tracking and real-time calculations.",
+      link: "https://github.com/bin-ym/GO2COD_WD_03",
+      image: "/images/projects/go2cod-calculator.jpg",
+      tech: ["React", "Tailwind CSS", "JavaScript"],
+    },
+    {
+      id: "go2cod-quiz",
+      name: "Quiz Application",
+      desc: "An interactive quiz app with real-time score calculation.",
+      link: "https://github.com/bin-ym/GO2COD_WD_02",
+      image: "/images/projects/go2cod-quiz.jpg",
+      tech: ["React", "Tailwind CSS", "JavaScript"],
+    },
+    {
+      id: "go2cod-todo",
+      name: "To-Do List App",
+      desc: "A simple and intuitive to-do list app with CRUD functionality.",
+      link: "https://github.com/bin-ym/GO2COD_WD_01",
+      image: "/images/projects/go2cod-todo.jpg",
+      tech: ["React", "Tailwind CSS", "JavaScript"],
+    },
+  ];
