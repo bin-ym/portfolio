@@ -1,12 +1,28 @@
 // data/projects.js
 export const projects = [
-    {
+  {
+      id: "btcreatives-portfolio",
+      name: "BT Creative Multimedia",
+      desc: "A portfolio website for a creative agency",
+      link: "https://btcreativeaddis.com/",
+      image: "/images/projects/btcreatives.png",
+      tech: ["Next.js", "Tailwind CSS"],
+  },
+  {
+    id: "ma-coffee-trading",
+    name: "Ma Coffee Trading",
+    desc: `A coffee trading company website (https://ma-coffee-trading.vercel.app/)`,
+    link: "https://github.com/bin-ym/ma-coffee-trading",
+    image: "/images/projects/macoffee.png",
+    tech: ["Next.js", "Tailwind CSS"],
+  },
+  {
       id: "etc-ecommerce",
       name: "ETC E-commerce",
       desc: "Ethiopian crafts store",
       link: "https://github.com/bin-ym/ETC---Ethiopian-Traditional-Craft-E-commerce",
       image: "/images/projects/etc-ecommerce.jpg",
-      tech: ["React.js", "Tailwind", "MongoDB"],
+      tech: ["React", "Tailwind CSS", "MongoDB"],
     },
     {
       id: "hrm",
@@ -14,7 +30,7 @@ export const projects = [
       desc: "HR management system",
       link: "https://github.com/bin-ym/HRM",
       image: "/images/projects/hrm.jpg",
-      tech: ["PHP", "XAMPP"],
+      tech: ["PHP", "MySQL","XAMPP"],
     },
     {
       id: "go2cod-gallery",
@@ -22,7 +38,7 @@ export const projects = [
       desc: "A responsive image gallery with lightbox functionality.",
       link: "https://github.com/bin-ym/GO2COD_WD_04",
       image: "/images/projects/go2cod-gallery.jpg",
-      tech: ["React", "Tailwind CSS", "JavaScript"],
+      tech: ["React", "Tailwind CSS"],
     },
     {
       id: "go2cod-calculator",
