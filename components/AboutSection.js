@@ -11,11 +11,11 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="py-16 bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl px-4 mx-auto">
         <h2 className="mb-8 text-3xl font-semibold text-center text-indigo-600 dark:text-indigo-400">
           Who Am I
         </h2>
-        <div className="flex flex-col md:flex-row items-center gap-8">
+        <div className="flex flex-col items-center gap-8 md:flex-row">
           {/* Image */}
           <div className="w-full md:w-1/3">
             <Image
@@ -28,7 +28,7 @@ export default function AboutSection() {
             />
           </div>
           {/* Bio and Documents */}
-          <div className="w-full md:w-2/3 text-center md:text-left">
+          <div className="w-full text-center md:w-2/3 md:text-left">
             <h3 className="mb-4 text-2xl font-semibold text-gray-800 dark:text-white">
               Binyam Tagel
             </h3>
@@ -38,7 +38,7 @@ export default function AboutSection() {
             <h4 className="mb-4 text-xl font-semibold text-gray-800 dark:text-white">
               My Documents
             </h4>
-            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            <div className="flex flex-wrap justify-center gap-4 md:justify-start">
               {documents.map((doc) => (
                 <a
                   key={doc.name}

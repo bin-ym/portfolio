@@ -5,14 +5,6 @@ import {
   ServicesSection,
 } from "../components/Navbar";
 import AboutSection from "../components/AboutSection";
-import {
-  FaPalette,
-  FaCode,
-  FaDesktop,
-  FaUsers,
-  FaRocket,
-  FaTag,
-} from "react-icons/fa"; // Add icons
 
 export default function Home() {
   return (
@@ -28,8 +20,7 @@ export default function Home() {
               Binyam Tagel
             </h1>
             <p className="max-w-md mt-4 text-xl text-gray-600 dark:text-gray-300">
-              Computer Science Grad | Full-Stack Developer | Building cool stuff
-              with code
+              Computer Science Grad | Full-Stack Developer
             </p>
             <Link
               href="/projects"
@@ -56,6 +47,12 @@ export default function Home() {
       <ServicesSection />
       {/* Let's Work Together Section */}
       <ContactSection />
+      {/* Footer */}
+      <footer className="py-2 text-center bg-gray-200 dark:bg-gray-800">
+        <p className="text-gray-600 dark:text-gray-300">
+          &copy; {new Date().getFullYear()} Binyam Tagel. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }

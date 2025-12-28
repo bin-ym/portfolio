@@ -1,6 +1,9 @@
+// app/projects/%5Bid%5D/page.js
+
 import Link from "next/link";
 import Image from "next/image";
-import { FaGithub, FaArrowLeft } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaArrowLeft } from "react-icons/fa";
+import { isGithubLink } from "@/utils/linkType";
 import { projects } from "../../../data/projects"; // Import projects data
 
 export default function ProjectPage({ params }) {
@@ -10,7 +13,7 @@ export default function ProjectPage({ params }) {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
         <div className="py-20 text-center text-gray-800 dark:text-white">
           Project not found
         </div>
@@ -19,8 +22,8 @@ export default function ProjectPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-4xl py-10 mx-auto px-4 text-center">
+    <div className="min-h-screen transition-colors duration-300 bg-gray-100 dark:bg-gray-900">
+      <div className="max-w-4xl px-4 py-10 mx-auto text-center">
         <h2 className="mb-6 text-3xl font-bold text-indigo-600 dark:text-indigo-400">
           {project.name}
         </h2>
@@ -52,8 +55,17 @@ export default function ProjectPage({ params }) {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 font-semibold text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
           >
-            <FaGithub className="mr-2" /> View on GitHub
+            {isGithubLink(project.link) ? (
+              <>
+                <FaGithub className="mr-2" /> View on GitHub
+              </>
+            ) : (
+              <>
+                <FaGlobe className="mr-2" /> Visit Website
+              </>
+            )}
           </a>
+
           <Link
             href="/projects"
             className="inline-flex items-center px-6 py-3 font-semibold text-indigo-600 border border-indigo-600 rounded-lg dark:text-indigo-400 dark:border-indigo-400 dark:hover:text-indigo-300 dark:hover:border-indigo-300 hover:text-indigo-800 hover:border-indigo-800"

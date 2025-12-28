@@ -11,8 +11,8 @@ export const projects = [
   {
     id: "ma-coffee-trading",
     name: "Ma Coffee Trading",
-    desc: `A coffee trading company website (https://ma-coffee-trading.vercel.app/)`,
-    link: "https://github.com/bin-ym/ma-coffee-trading",
+    desc: `A coffee trading company website`,
+    link: "https://ma-coffee-trading.vercel.app/",
     image: "/images/projects/macoffee.png",
     tech: ["Next.js", "Tailwind CSS"],
   },

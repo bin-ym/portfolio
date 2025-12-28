@@ -1,13 +1,16 @@
+// app/projects/page.js
+
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaGlobe } from "react-icons/fa";
+import { isGithubLink } from "@/utils/linkType";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { projects } from "../../data/projects"; // Import projects data
 
-const itemsPerPage = 3;
+const itemsPerPage = 6;
 
 export default function Projects() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,8 +21,8 @@ export default function Projects() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-6xl py-10 mx-auto px-4">
+    <div className="min-h-screen transition-colors duration-300 bg-gray-100 dark:bg-gray-900">
+      <div className="max-w-6xl px-4 py-10 mx-auto">
         <h2 className="mb-10 text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400">
           My Projects
         </h2>
@@ -66,9 +69,17 @@ export default function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center mt-2 font-medium text-indigo-600 dark:text-indigo-400 dark:hover:text-indigo-300 hover:text-indigo-800"
+                className="inline-flex items-center mt-2 font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-800"
               >
-                <FaGithub className="mr-2" /> View on GitHub
+                {isGithubLink(project.link) ? (
+                  <>
+                    <FaGithub className="mr-2" /> View on GitHub
+                  </>
+                ) : (
+                  <>
+                    <FaGlobe className="mr-2" /> Visit Website
+                  </>
+                )}
               </a>
             </motion.div>
           ))}
@@ -87,7 +98,9 @@ export default function Projects() {
             Page {currentPage} of {totalPages}
           </span>
           <button
-            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
             disabled={currentPage === totalPages}
             className="px-4 py-2 text-white bg-indigo-600 rounded-lg disabled:opacity-50 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
           >
