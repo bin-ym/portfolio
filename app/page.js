@@ -1,18 +1,21 @@
+// app/page.js
+
 import Link from "next/link";
 import Image from "next/image";
-import ContactSection from "../components/ContactSection";
-import {
-  ServicesSection,
-} from "../components/Navbar";
-import AboutSection from "../components/AboutSection";
+import AboutSection from "@/components/AboutSection";
+import ServicesSection from "@/components/ServicesSection";     // Fixed: default import
+import ContactSection from "@/components/ContactSection";
+
+// Optional: Comment out HeroSection until you create the file
+// import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <div id="top">
-      {/* Hero Section */}
-      <section className="py-20 text-center bg-gray-100 dark:bg-gray-900">
-        <div className="flex flex-col items-center justify-between max-w-6xl mx-auto md:flex-row">
-          <div className="text-left md:w-1/2">
+    <>
+      {/* Built-in Hero Section (your current one) */}
+      <section id="top" className="py-20 text-center bg-gray-100 dark:bg-gray-900">
+        <div className="flex flex-col items-center justify-between max-w-6xl px-4 mx-auto md:flex-row">
+          <div className="text-center md:text-left md:w-1/2">
             <h2 className="text-2xl text-gray-600 dark:text-gray-400">
               Hello, My Name Is
             </h2>
@@ -24,35 +27,39 @@ export default function Home() {
             </p>
             <Link
               href="/projects"
-              className="inline-block px-6 py-3 mt-8 font-semibold text-white transition bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700"
+              className="inline-block px-8 py-4 mt-10 text-lg font-semibold text-white transition bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-700"
             >
               View My Projects
             </Link>
           </div>
-          <div className="mt-8 md:w-1/2 md:mt-0">
+          <div className="flex justify-center mt-12 md:mt-0 md:w-1/2">
             <Image
               src="/images/my.jpg"
               alt="Binyam Tagel"
-              width={400}
-              height={400}
-              className="rounded-lg shadow-lg"
+              width={450}
+              height={450}
+              className="object-cover shadow-2xl rounded-2xl"
+              priority
             />
           </div>
         </div>
       </section>
 
-      {/* About Me Section */}
+      {/* About Me */}
       <AboutSection />
-      {/* What I Can Do Section */}
+
+      {/* Services */}
       <ServicesSection />
-      {/* Let's Work Together Section */}
+
+      {/* Contact */}
       <ContactSection />
+
       {/* Footer */}
-      <footer className="py-2 text-center bg-gray-200 dark:bg-gray-800">
+      <footer className="py-8 text-center bg-gray-200 dark:bg-gray-800">
         <p className="text-gray-600 dark:text-gray-300">
-          &copy; {new Date().getFullYear()} Binyam Tagel. All rights reserved.
+          © {new Date().getFullYear()} Binyam Tagel. All rights reserved.
         </p>
       </footer>
-    </div>
+    </>
   );
 }

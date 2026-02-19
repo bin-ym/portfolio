@@ -1,9 +1,10 @@
+// components/ContactSection.js
+
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { FaEnvelope, FaTimes } from "react-icons/fa";
-import { SocialLinks } from "./Navbar";
+import { SocialLinks } from "@/components/SocialLinks";
 
 export default function ContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);

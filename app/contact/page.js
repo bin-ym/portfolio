@@ -1,3 +1,5 @@
+// app/contact/page.js
+
 import Link from "next/link";
 
 export default function Contact() {
@@ -8,7 +10,7 @@ export default function Contact() {
         I’d love to hear from you! Reach out via email or connect with me on social media.
       </p>
       <a
-        href="mailto:your-email@example.com"
+        href="mailto:binyam.tagel@gmail.com"
         className="inline-block px-6 py-3 font-semibold text-white transition bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700"
       >
         Email Me

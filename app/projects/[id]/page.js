@@ -1,4 +1,4 @@
-// app/projects/%5Bid%5D/page.js
+// app/projects/[id]/page.js
 
 import Link from "next/link";
 import Image from "next/image";

@@ -9,6 +9,14 @@ export const projects = [
       tech: ["Next.js", "Tailwind CSS"],
   },
   {
+    id: "BTPass",
+    name: "BTPass",
+    desc: "A QR-based invitation & access control system.",
+    link: "https://bt-pass-admin.vercel.app/",
+    image: "/images/projects/BTPass.png",
+    tech: ["Next.js", "Tailwind CSS", "Supabase"],
+  },
+  {
     id: "ma-coffee-trading",
     name: "Ma Coffee Trading",
     desc: `A coffee trading company website`,
