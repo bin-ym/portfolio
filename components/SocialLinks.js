@@ -16,7 +16,7 @@ export function SocialLinks() {
           href={social.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-gray-600 dark:text-gray-400 dark:hover:text-indigo-400 hover:text-indigo-600"
+          className="flex items-center text-muted-foreground hover:text-primary"
           aria-label={`Visit ${social.name}`}
         >
           {social.icon}

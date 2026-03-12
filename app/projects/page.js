@@ -1,5 +1,3 @@
-// app/projects/page.js
-
 "use client";
 
 import Link from "next/link";
@@ -8,24 +6,26 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 import { isGithubLink } from "@/utils/linkType";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { projects } from "../../data/projects"; // Import projects data
+import { projects } from "../../data/projects";
 
 const itemsPerPage = 6;
 
 export default function Projects() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(projects.length / itemsPerPage);
+
   const paginatedProjects = projects.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gray-100 dark:bg-gray-900">
+    <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <div className="max-w-6xl px-4 py-10 mx-auto">
         <h2 className="mb-10 text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400">
           My Projects
         </h2>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {paginatedProjects.map((project) => (
             <motion.div
@@ -33,9 +33,8 @@ export default function Projects() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Link to individual project page */}
               <Link href={`/projects/${project.id}`} className="block">
-                <div className="p-6 transition bg-white rounded-lg shadow-md dark:bg-gray-800 hover:shadow-xl">
+                <div className="p-6 transition border rounded-lg shadow-md bg-card text-card-foreground border-border hover:shadow-xl">
                   <Image
                     src={project.image}
                     alt={project.name}
@@ -44,13 +43,15 @@ export default function Projects() {
                     className="object-cover w-full mb-4 rounded-md"
                     priority
                   />
-                  <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">
+
+                  <h3 className="mb-2 text-xl font-semibold text-foreground">
                     {project.name}
                   </h3>
-                  <p className="mb-4 text-gray-600 dark:text-gray-300">
+
+                  <p className="mb-4 text-muted-foreground">
                     {project.desc}
                   </p>
-                  {/* Tech Stack Badges */}
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span
@@ -64,7 +65,6 @@ export default function Projects() {
                 </div>
               </Link>
 
-              {/* GitHub Link */}
               <a
                 href={project.link}
                 target="_blank"
@@ -85,7 +85,6 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Pagination Controls */}
         <div className="flex justify-center mt-6 space-x-4">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -94,9 +93,11 @@ export default function Projects() {
           >
             Previous
           </button>
-          <span className="py-2 text-lg font-semibold text-gray-800 dark:text-gray-200">
+
+          <span className="py-2 text-lg font-semibold text-foreground">
             Page {currentPage} of {totalPages}
           </span>
+
           <button
             onClick={() =>
               setCurrentPage((prev) => Math.min(prev + 1, totalPages))

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";     // Fixed: default import
+import ServicesSection from "@/components/ServicesSection"; // Fixed: default import
 import ContactSection from "@/components/ContactSection";
 
 // Optional: Comment out HeroSection until you create the file
@@ -13,16 +13,19 @@ export default function Home() {
   return (
     <>
       {/* Built-in Hero Section (your current one) */}
-      <section id="top" className="py-20 text-center bg-gray-100 dark:bg-gray-900">
+      <section
+        id="top"
+        className="py-20 text-center bg-background text-foreground"
+      >
         <div className="flex flex-col items-center justify-between max-w-6xl px-4 mx-auto md:flex-row">
           <div className="text-center md:text-left md:w-1/2">
-            <h2 className="text-2xl text-gray-600 dark:text-gray-400">
+            <h2 className="text-2xl text-muted-foreground">
               Hello, My Name Is
             </h2>
             <h1 className="mt-2 text-5xl font-extrabold text-indigo-600 dark:text-indigo-400">
               Binyam Tagel
             </h1>
-            <p className="max-w-md mt-4 text-xl text-gray-600 dark:text-gray-300">
+            <p className="max-w-md mt-4 text-xl text-muted-foreground">
               Computer Science Grad | Full-Stack Developer
             </p>
             <Link
@@ -39,6 +42,7 @@ export default function Home() {
               width={450}
               height={450}
               className="object-cover shadow-2xl rounded-2xl"
+              style={{ width: "auto", height: "auto" }}
               priority
             />
           </div>
@@ -55,8 +59,8 @@ export default function Home() {
       <ContactSection />
 
       {/* Footer */}
-      <footer className="py-8 text-center bg-gray-200 dark:bg-gray-800">
-        <p className="text-gray-600 dark:text-gray-300">
+      <footer className="py-8 text-center bg-background text-foreground">
+        <p>
           © {new Date().getFullYear()} Binyam Tagel. All rights reserved.
         </p>
       </footer>

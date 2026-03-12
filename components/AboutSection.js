@@ -5,12 +5,18 @@ import { FaFileDownload } from "react-icons/fa";
 export default function AboutSection() {
   const documents = [
     { name: "My CV", path: "/documents/Binyam_Tagel_CV.pdf" },
-    { name: "Certificate of Completion - Dereja", path: "/documents/Dereja_certificate.pdf" }, // Updated filename
-    { name: "Recommendation Letter", path: "/documents/Recommendation_letter.pdf" }, // Updated filename
+    {
+      name: "Certificate of Completion - Dereja",
+      path: "/documents/Dereja_certificate.pdf",
+    }, // Updated filename
+    {
+      name: "Recommendation Letter",
+      path: "/documents/Recommendation_letter.pdf",
+    }, // Updated filename
   ];
 
   return (
-    <section id="about" className="py-16 bg-gray-100 dark:bg-gray-900">
+    <section id="about" className="py-16 bg-background text-foreground">
       <div className="max-w-6xl px-4 mx-auto">
         <h2 className="mb-8 text-3xl font-semibold text-center text-indigo-600 dark:text-indigo-400">
           Who Am I
@@ -24,18 +30,24 @@ export default function AboutSection() {
               width={300}
               height={300}
               className="mx-auto rounded-full shadow-lg"
+              style={{ width: "auto", height: "auto" }}
               priority
             />
           </div>
           {/* Bio and Documents */}
           <div className="w-full text-center md:w-2/3 md:text-left">
-            <h3 className="mb-4 text-2xl font-semibold text-gray-800 dark:text-white">
+            <h3 className="mb-4 text-2xl font-semibold text-foreground">
               Binyam Tagel
             </h3>
-            <p className="mb-6 text-gray-600 dark:text-gray-300">
-              I’m a passionate web developer with a focus on creating user-friendly and visually appealing applications. With expertise in modern technologies like React, Next.js, and Tailwind CSS, I strive to build projects that are both functional and aesthetically pleasing. I’m always eager to learn new skills and take on challenging projects to grow as a developer.
+            <p className="mb-6 text-muted-foreground">
+              I’m a passionate web developer with a focus on creating
+              user-friendly and visually appealing applications. With expertise
+              in modern technologies like React, Next.js, and Tailwind CSS, I
+              strive to build projects that are both functional and
+              aesthetically pleasing. I’m always eager to learn new skills and
+              take on challenging projects to grow as a developer.
             </p>
-            <h4 className="mb-4 text-xl font-semibold text-gray-800 dark:text-white">
+            <h4 className="mb-4 text-xl font-semibold text-foreground">
               My Documents
             </h4>
             <div className="flex flex-wrap justify-center gap-4 md:justify-start">

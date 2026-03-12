@@ -4,17 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaGithub, FaGlobe, FaArrowLeft } from "react-icons/fa";
 import { isGithubLink } from "@/utils/linkType";
-import { projects } from "../../../data/projects"; // Import projects data
+import { projects } from "../../../data/projects";
+import ImageCarousel from "@/components/ImageCarousel";
 
-export default function ProjectPage({ params }) {
-  const { id } = params; // Extract project ID from params
+export default async function ProjectPage({ params }) {
+  const { id } = await params;
 
   const project = projects.find((p) => p.id === id);
+  const hasMultipleImages = project.images && project.images.length > 1;
 
   if (!project) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-        <div className="py-20 text-center text-gray-800 dark:text-white">
+      <div className="flex items-center justify-center min-h-screen bg-background text-foreground">
+        <div className="py-20 text-center">
           Project not found
         </div>
       </div>
@@ -22,19 +24,25 @@ export default function ProjectPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gray-100 dark:bg-gray-900">
+    <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <div className="max-w-4xl px-4 py-10 mx-auto text-center">
         <h2 className="mb-6 text-3xl font-bold text-indigo-600 dark:text-indigo-400">
           {project.name}
         </h2>
-        <Image
-          src={project.image}
-          alt={project.name}
-          width={800}
-          height={256}
-          className="object-cover w-full h-64 mx-auto mb-6 rounded-md"
-        />
-        <p className="mb-6 text-lg text-gray-600 dark:text-gray-300">
+        {hasMultipleImages ? (
+          <ImageCarousel images={project.images} projectName={project.name} />
+        ) : (
+          <div className="flex justify-center mb-8">
+            <Image
+              src={project.images?.[0] || project.image}
+              alt={project.name}
+              width={900}
+              height={500}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+        )}
+        <p className="mb-6 text-lg text-muted-foreground">
           {project.desc}
         </p>
         {/* Tech Stack Badges */}

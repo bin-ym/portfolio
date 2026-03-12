@@ -30,12 +30,15 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 text-center bg-gray-200 dark:bg-gray-800">
+    <section
+      id="contact"
+      className="py-20 text-center bg-background text-foreground"
+    >
       <div className="max-w-6xl mx-auto">
         <h2 className="mb-4 text-4xl font-bold text-indigo-600 dark:text-indigo-400">
           Let’s Work Together on Your Next Project
         </h2>
-        <p className="mb-8 text-gray-600 dark:text-gray-300">
+        <p className="mb-8 text-muted-foreground">
           Collaboration is key! Let’s join forces and build something amazing.
         </p>
         <button
@@ -49,10 +52,10 @@ export default function ContactSection() {
         {/* Modal */}
         {isModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="relative w-full max-w-md p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+            <div className="relative w-full max-w-md p-6 border rounded-lg shadow-lg bg-card text-card-foreground border-border">
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="absolute text-gray-600 top-4 right-4 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+                className="absolute top-4 right-4 text-muted-foreground hover:text-primary"
               >
                 <FaTimes />
               </button>
@@ -63,7 +66,7 @@ export default function ContactSection() {
                 <div className="mb-4">
                   <label
                     htmlFor="name"
-                    className="block mb-2 text-left text-gray-700 dark:text-gray-300"
+                    className="block mb-2 text-left text-foreground"
                   >
                     Name
                   </label>
@@ -74,13 +77,13 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 text-gray-800 bg-gray-100 rounded-lg dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                    className="w-full px-4 py-2 border rounded-lg bg-muted text-foreground border-border focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div className="mb-4">
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-left text-gray-700 dark:text-gray-300"
+                    className="block mb-2 text-left text-foreground"
                   >
                     Email
                   </label>
@@ -91,13 +94,13 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 text-gray-800 bg-gray-100 rounded-lg dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                    className="w-full px-4 py-2 border rounded-lg bg-muted text-foreground border-border focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div className="mb-4">
                   <label
                     htmlFor="message"
-                    className="block mb-2 text-left text-gray-700 dark:text-gray-300"
+                    className="block mb-2 text-left text-foreground"
                   >
                     Message
                   </label>
@@ -108,7 +111,7 @@ export default function ContactSection() {
                     onChange={handleInputChange}
                     required
                     rows="4"
-                    className="w-full px-4 py-2 text-gray-800 bg-gray-100 rounded-lg dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                    className="w-full px-4 py-2 border rounded-lg bg-muted text-foreground border-border focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <button

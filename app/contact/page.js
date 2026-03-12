@@ -5,9 +5,12 @@ import Link from "next/link";
 export default function Contact() {
   return (
     <div className="max-w-4xl py-20 mx-auto text-center">
-      <h2 className="mb-6 text-3xl font-bold text-indigo-600 dark:text-indigo-400">Get in Touch</h2>
-      <p className="mb-8 text-gray-600 dark:text-gray-300">
-        I’d love to hear from you! Reach out via email or connect with me on social media.
+      <h2 className="mb-6 text-3xl font-bold text-indigo-600 dark:text-indigo-400">
+        Get in Touch
+      </h2>
+      <p className="mb-8 text-muted-foreground">
+        I’d love to hear from you! Reach out via email or connect with me on
+        social media.
       </p>
       <a
         href="mailto:binyam.tagel@gmail.com"
@@ -26,7 +29,7 @@ export default function Contact() {
             href={social.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 dark:hover:text-indigo-400 hover:text-indigo-600"
+            className="text-muted-foreground hover:text-primary"
           >
             {social.name}
           </Link>
